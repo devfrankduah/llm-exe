@@ -142,6 +142,11 @@ export default defineConfig({
             items: [],
           },
           {
+            text: "Google Gemini",
+            link: "/llm/gemini.html",
+            items: [],
+          },
+          {
             text: "AWS Bedrock",
             link: "/llm/bedrock/index.html",
             items: [
@@ -156,6 +161,16 @@ export default defineConfig({
                 items: [],
               },
             ],
+          },
+          {
+            text: "xAI",
+            link: "/llm/xai.html",
+            items: [],
+          },
+          {
+            text: "Ollama",
+            link: "/llm/ollama.html",
+            items: [],
           },
         ],
       },
@@ -292,6 +307,10 @@ export default defineConfig({
             text: "LLM Functions",
             link: "",
             items: [
+              {
+                text: "Hello World",
+                link: "/examples/bots/hello.html",
+              },
               {
                 text: "Validator",
                 link: "/examples/bots/validator.html",
