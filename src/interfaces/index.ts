@@ -1,4 +1,4 @@
-export { FromSchema, JSONSchema } from "json-schema-to-ts";
+export type { FromSchema, JSONSchema } from "json-schema-to-ts";
 export * from "./utils";
 export * from "./chat";
 export * from "./openai";
@@ -7,3 +7,4 @@ export * from "./prompt";
 export * from "./parser";
 export * from "./llm";
 export * from "./config";
+export * from "./errors";

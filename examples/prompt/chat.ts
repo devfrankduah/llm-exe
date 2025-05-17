@@ -1,4 +1,4 @@
-import { createPrompt, createChatPrompt } from "@/prompt";
+import { createPrompt, createChatPrompt } from "../../src/prompt"; // this needs to be here for examples to build
 
 const exampleCreateChatPrompt = () => {
 // #region exampleCreateChatPrompt

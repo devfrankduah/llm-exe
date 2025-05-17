@@ -7,11 +7,12 @@
     "moduleResolution": "nodenext",
     "target": "es2021",
     "esModuleInterop": true,
+    "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
     "useDefineForClassFields": true,
     "strictPropertyInitialization": false,
     "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "outDir": "build",
     "baseUrl": "./",
@@ -26,12 +27,8 @@
       "@/*": ["src/*"]
     }
   },
-  "exclude": [
-    ".github",
-    "build",
-    "coverage",
-    "dist",
-    "docs",
-    "node_modules"
-  ]
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "exclude": [".github", "build", "coverage", "dist", "docs", "node_modules"]
 }

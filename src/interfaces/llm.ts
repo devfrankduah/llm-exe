@@ -406,6 +406,13 @@ export interface GeminiRequest extends GenericLLm {
   geminiApiKey?: string;
 }
 
+export interface DeepseekRequest extends GenericLLm {
+  model: string;
+  responseFormat?: Record<string, any>;
+  deepseekApiKey?: string;
+  useJson?: boolean;
+}
+
 export type AllEmbedding = {
   "openai.embedding.v1": {
     input: OpenAiEmbeddingOptions;
@@ -453,6 +460,10 @@ export type AllLlm = {
     input: GeminiRequest;
     // output: OpenAiRequest;
   };
+  "deepseek.chat.v1": {
+    input: DeepseekRequest;  
+    // output: OpenAiRequest;
+  };
 };
 
 export type AllUseLlmOptions = AllLlm & {
@@ -477,16 +488,13 @@ export type AllUseLlmOptions = AllLlm & {
   "anthropic.claude-3-sonnet": {
     input: Omit<AnthropicRequest, "model">;
   };
-  "anthropic.claude-3-haiku": {
+  "anthropic.claude-3-5-haiku": {
     input: Omit<AnthropicRequest, "model">;
   };
-
-
   "google.gemini-2.5-pro-exp-03-25": {
     input: Omit<GeminiRequest, "model">;
     // output: OpenAiRequest;
   };
-
   "google.gemini-2.0-flash": {
     input: Omit<GeminiRequest, "model">;
     // output: OpenAiRequest;
@@ -495,12 +503,10 @@ export type AllUseLlmOptions = AllLlm & {
     input: Omit<GeminiRequest, "model">;
     // output: OpenAiRequest;
   };
-
   "google.gemini-1.5-pro": {
     input: Omit<GeminiRequest, "model">;
     // output: OpenAiRequest;
   };
-  
   "xai.grok-2": {
     input: OpenAiRequest;
   };
@@ -519,6 +525,9 @@ export type AllUseLlmOptions = AllLlm & {
   "ollama.qwq": {
     input: GenericLLm;
   };
+  "deepseek.chat": {
+    input: DeepseekRequest;
+  }
 };
 
 export type LlmProviderKey = keyof AllLlm;
