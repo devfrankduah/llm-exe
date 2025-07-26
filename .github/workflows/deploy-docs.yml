@@ -28,7 +28,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         run: |
           BRANCH="${GITHUB_REF#refs/heads/}"
-          if [ "$BRANCH" != "development" ] && [ "$BRANCH" != "main" ] && [ "$BRANCH" != "workflow-updates" ]; then
+          if [ "$BRANCH" != "development" ] && [ "$BRANCH" != "main" ]; then
             echo "Deploy should only be created from the development or main branch. This deploy is from $BRANCH."
             exit 1
           fi
@@ -73,7 +73,7 @@ jobs:
           PACKAGE_ID: ${{ env.PACKAGE_ID }}
 
       - name: Build docs
-        run: npm run docs:build
+        run: npm run docs:update-providers && npm run docs:build
         env:
           VITE_PACKAGE_ID: ${{ env.PACKAGE_ID }}
 
